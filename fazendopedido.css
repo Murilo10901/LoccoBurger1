@@ -1,0 +1,198 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  min-width: 310px; /* Define o mínimo de largura para o site */
+  background: radial-gradient(circle, rgba(51, 37, 0, 0.48) 0%, rgba(126, 72, 0, 0.218) 100%), #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: auto; /* Ajusta automaticamente ao conteúdo */
+  width: 100%;
+
+}
+
+/* Corrige o layout para telas menores */
+@media screen and (max-width: 350px) {}
+ 
+
+
+header {
+  background-color: #d07f15;
+  color: #fff;
+  height: 90px;
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-wrap: break-word;
+  width: auto; /* Ajusta automaticamente ao conteúdo */
+}
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* O popup em si */
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+  
+}
+.cancel-btn{
+  padding: 10px 2px;
+  background-color: #550605;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.popup-content {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%; /* Ajuste para telas pequenas */
+  max-width: 400px; /* Largura máxima */
+  text-align: center;
+  position: relative; /* Necessário para o botão fechar */
+  
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: block;
+}
+
+
+#item-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Input e campos no popup */
+.popup input, .popup select, .popup textarea {
+  width: 90%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+/* Botão de enviar */
+.submit-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #218838;
+}
+
+/* Exibir o popup */
+.overlay.active {
+  display: none;
+}
+
+
+
+
+
+
+
+
+button{
+  padding: 10px 2px;
+  background-color: #875207;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+.HOMEBtn{
+  padding: 10px 0.5rem;
+  background-color: #6e1406;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: #fff;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 8px 4px 10px rgba(0, 0, 0, 0.25); /* X Y Blur Spread Color */
+  min-width: 320px; /* Atualizado para suportar dispositivos menores */
+  word-wrap: break-word;
+}
+
+
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  gap: 10px;
+  word-wrap: break-word; /* Faz o texto quebrar para evitar overflow */
+}
+
+.item img {
+  width: 70px; /* Ajuste o tamanho conforme necessário */
+  height: 70px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 20px;
+}
+
+.item p {
+  flex-grow: 1;
+}
+

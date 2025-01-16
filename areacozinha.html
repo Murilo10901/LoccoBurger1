@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área da Cozinha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Área da Cozinha - Pedidos</h1>
+    <button onclick="logout()">Sair</button>
+   <a href="indexcontrole.php"> <button>Sair</button></a>
+  </header>
+  <main>
+    <div id="orders-container">
+      <!-- Os pedidos vão aparecer aqui -->
+    </div>
+  </main>
+
+  <script>
+    // Função para simular a busca de pedidos do banco de dados (substitua com integração real)
+    function fetchOrders() {
+      const orders = JSON.parse(localStorage.getItem('orders') || '[]'); // Dados simulados do localStorage
+      const ordersContainer = document.getElementById('orders-container');
+      ordersContainer.innerHTML = ''; // Limpa os pedidos antigos
+
+      if (orders.length > 0) {
+        orders.forEach((order, index) => {
+          const orderElement = document.createElement('div');
+          orderElement.className = 'order';
+          orderElement.innerHTML = `
+            <h3>Pedido #${index + 1}</h3>
+            <p>Cliente: ${order.name}</p>
+            <p>Telefone: ${order.phone}</p>
+            <p>Itens:</p>
+            <ul>${order.items.map(item => `<li>${item}</li>`).join('')}</ul>
+          `;
+          ordersContainer.appendChild(orderElement);
+        });
+      } else {
+        ordersContainer.innerHTML = '<p>Nenhum pedido encontrado.</p>';
+      }
+    }
+
+    function logout() {
+      window.location.href = 'kitchen-login.html';
+    }
+
+    // Simula a atualização dos pedidos quando a página carrega
+    window.onload = fetchOrders;
+  </script>
+</body>
+</html>

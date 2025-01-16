@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hamburgueria</title>
+    <link rel="stylesheet" href="fazendopedido.css">
+</head>
+<body >
+    <header>
+
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">LoccoBurger</a></h1>
+           
+            <a href="index.html"><button  class="HOMEBtn"id="IRparahome">Home</button></a>
+            
+         
+
+        
+    </header>
+
+    <main>
+
+        <div id="popup" class="popup">
+            <div class="popup-overlay" onclick="closePopup()"></div> <!-- Fundo clicável -->
+            <div class="popup-content">
+             
+              <img id="item-image" src="" alt="Imagem do Item" />
+              <h2 id="item-name">Nome do Item</h2>
+              <p id="item-description">Descrição do Item</p>
+              <label for="quantity">Quantidade:</label>
+              <input type="number" id="quantity" min="1" value="" />
+              <label for="doneness">Ponto da Carne:</label>
+              <select id="doneness">
+                <option>Mal Passado</option>
+                <option>Ao Ponto</option>
+                <option>Bem Passado</option>
+              </select>
+              <label for="remove-ingredient">Remover Ingrediente:</label>
+              <input type="text" id="remove-ingredient" placeholder="Ex: Tomate" />
+              <button class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</button>
+              <button class="cancel-btn" onclick="closePopup()">Cancelar</button>
+            </div>
+          </div>
+
+
+          <div id="quantity-popup" class="popup">
+            <div class="popup-overlay" onclick="closeQuantityPopup()"></div> <!-- Fundo clicável -->
+            <div class="popup-content">
+                <h2 id="item-name">Nome do Item</h2>
+                <img id="item-image" src="" alt="Imagem do Item" />
+                <p id="item-description">Descrição do Item</p>
+                <label for="quantity-only">Quantidade:</label>
+                <input type="number" id="quantity-only" min="1" value="" />
+                <button class="add-to-cart" onclick="addToCartQuantity()">Adicionar</button>
+                <button class="cancel-btn" onclick="closeQuantityPopup()">Cancelar</button>
+            </div>
+        </div>
+        
+        
+
+
+         
+
+      <section>
+      <h2>Lanches</h2>
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 1">
+          <p>QUEIJO BRIE </p>
+          <h5>R$37,90</h5>
+          <button 
+    onclick="openQuantityPopup(this)" 
+    data-name="Queijo Brie" 
+    data-image="img/Loccoburgerimagemhero.jpeg" 
+    data-description="Delicioso hambúrguer com queijo brie.">
+    Incluir no Pedido
+</button>
+        </div>
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 2">
+            <p>MOLHO RÚSTICO</p>
+            <h5>R$32,90</h5>
+            <button onclick="openPopup(this)" 
+          data-name="Queijo Brie" 
+          data-image="img/Loccoburgerimagemhero.jpeg" 
+          data-description="Delicioso hambúrguer com queijo brie.">
+    Incluir no Pedido
+  </button></div>
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 3">
+            <p>BURGER BACON</p>
+            <h5>R$32,90</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button></div>
+        </div> 
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 4">
+            <p>Cebola Caramelizada</p>
+            <h5>R$36,90</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button></div>
+        </div> 
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 4">
+            <p>BURGER TRADICIONAL</p>
+            <h5>R$33,90</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button>
+        </div> 
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 6">
+            <p>BURGER CHEDDAR</p>
+            <h5>R$31,90</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button>
+
+        </div> 
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 7">
+            <p>LINGUIÇA TOSCANA</p>
+            <h5>R$34,90</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button></div>
+
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 8">
+            <p>DUPLO SMASH</p>
+            <h5>R$29,90</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button></div>
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 9">
+            <p>DUPLO TRIPLO SMASH</p>
+            <h5>R$34,90</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button></div>
+        <div class="item">
+            <img src="img/Loccoburgerimagemhero.jpeg" alt="Hambúrguer 10">
+            <p>BURGER KIDS</p>
+            <h5>R$21,90</h5>
+            <button onclick="adicionarAoCarrinho('Hambúrguer 2')">Incluir no Pedido</button>
+        </div>
+        <!-- Adicione mais lanches conforme necessário -->
+
+        
+
+
+    </section>
+    
+    
+    <section>
+        <h2>Acompanhamento</h2>
+        <div class="item">
+            <img src="img/imagem_batata.jpeg" alt="Acompanhamento 1">
+            <p>Porção de Batata Tradicional</p>
+            <h5>R$15,00</h5>
+            <button onclick="openPopup(this)" 
+            data-name="MOLHO RÚSTICO" 
+            data-image="img/Loccoburgerimagemhero.jpeg" 
+            data-description="Delicioso Hamburger com Queijo Brie.">
+      Incluir no Pedido
+    </button>
+        </div>
+       
+        <!-- Adicione mais acompanhamentos conforme necessário -->
+    </section>
+    
+    <section>
+        <h2>Bebidas</h2>
+        <div class="item">
+            <img src="img/cocacolazero.jpeg" alt="Bebida 1">
+            <p> Coca-Cola ZERO</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 1')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/coca.jfif" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/Guarana-Zero.jpeg" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/guaranaimg.jpeg" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/imagemsprite.jpeg" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/schwimage.jpeg" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/pepsiimagem.jpeg" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/fantaUVA.jfif" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/fantalaranja.jpeg" alt="Bebida 2">
+            <p>Coca-Cola Normal</p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/DELVALE.jpeg" alt="Bebida 2">
+            <p>Suco Del Valle UVA </p>
+            <h5>R$6,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/agua.jpeg" alt="Bebida 2">
+            <p>Água</p>
+            <h5>R$5,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/aguacgas.jpeg" alt="Bebida 2">
+            <p>Água Com Gás</p>
+            <h5>R$5,00</h5>
+            <button onclick="adicionarAoCarrinho('Bebida 2')">Incluir no Pedido</button>
+        </div>
+        
+        <!-- Adicione mais bebidas conforme necessário -->
+    </section>
+    
+    <section>
+        <h2>Cervejas</h2>
+        <div class="item">
+            <img src="img/chopp.jpeg" alt="Cerveja 1">
+            <p>Chopp Madalena</p>
+            <h5>R$14,00</h5>
+            <button onclick="adicionarAoCarrinho('Cerveja 1')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/HEnrikens.jpeg" alt="Cerveja 2">
+            <p>Cerveja Heineken</p>
+            <h5>R$12,00</h5>
+            <button onclick="adicionarAoCarrinho('Cerveja 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/henriquezero.jpeg" alt="Cerveja 2">
+            <p>Cerveja Heineken ZERO</p>
+            <h5>R$12,00</h5>
+            <button onclick="adicionarAoCarrinho('Cerveja 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/corona.jpeg" alt="Cerveja 2">
+            <p>Cerveja Corona</p>
+            <h5>R$12,00</h5>
+            <button onclick="adicionarAoCarrinho('Cerveja 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/stella.jpeg" alt="Cerveja 2">
+            <p>Cerveja Stella</p>
+            <h5>R$12,00</h5>
+            <button onclick="adicionarAoCarrinho('Cerveja 2')">Incluir no Pedido</button>
+        </div>
+        <div class="item">
+            <img src="img/bud.webp" alt="Cerveja 2">
+            <p>Cerveja budweiser </p>
+            <h5>R$12,00</h5>
+            <button onclick="adicionarAoCarrinho('Cerveja 2')">Incluir no Pedido</button>
+        </div>
+        <!-- Adicione mais cervejas conforme necessário -->
+    </section>
+    
+    </main>
+    <script>
+         function openPopup(button) {
+        const name = button.getAttribute("data-name");
+        const image = button.getAttribute("data-image");
+        const description = button.getAttribute("data-description");
+
+        const popup = document.getElementById("popup");
+        popup.style.display = "flex"; // Mostra o popup apenas quando a função for chamada
+        document.getElementById("item-image").src = image;
+        document.getElementById("item-name").innerText = name;
+        document.getElementById("item-description").innerText = description;
+}
+
+    function closePopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "none"; // Oculta o popup
+      
+}
+    
+
+    function addToCart() {
+      const quantity = document.getElementById("quantity").value;
+      console.log(`Quantidade: ${quantity}`);
+      closePopup(); // Fecha o popup após adicionar ao carrinho
+    }
+    function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none'; // Ou outro método de ocultar o popup
+}
+
+function validateFields() {
+    // Selecionando os campos
+    const quantity = document.getElementById('quantity');
+    const doneness = document.getElementById('doneness');
+    
+    let isValid = true;
+
+    // Limpar mensagens de erro anteriores
+    document.querySelectorAll('.error-message').forEach(msg => msg.remove());
+
+    // Validação de Quantidade
+    if (!quantity.value || quantity.value < 1) {
+        const error = document.createElement('span');
+        error.textContent = 'Por favor, insira uma quantidade válida.';
+        error.className = 'error-message';
+        quantity.parentNode.appendChild(error);
+        isValid = false;
+    }
+
+    // Validação de Ponto da Carne
+    if (!doneness.value) {
+        const error = document.createElement('span');
+        error.textContent = 'Por favor, selecione o ponto da carne.';
+        error.className = 'error-message';
+        doneness.parentNode.appendChild(error);
+        isValid = false;
+    }
+
+    return isValid; // Retorna se o formulário é válido ou não
+}
+
+function addToCart() {
+    if (!validateFields()) {
+        return; // Se os campos forem inválidos, interrompe a função
+    }
+    
+    alert('Item adicionado ao carrinho!');
+    closePopup(); // Opcional: fecha o popup após adicionar ao carrinho
+}
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none'; // Oculta o popup
+
+    // Reinicia os campos do formulário
+    document.getElementById('quantity').value = '';
+    document.getElementById('doneness').value = '';
+    document.getElementById('remove-ingredient').value = '';
+
+    // Remove mensagens de erro
+    document.querySelectorAll('.error-message').forEach(msg => msg.remove());
+}
+
+   
+      </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
